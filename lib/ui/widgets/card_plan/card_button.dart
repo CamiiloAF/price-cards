@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:price_cards/models/card_model.dart';
 import 'package:price_cards/shared/extensions/extensions.dart';
+import 'package:price_cards/shared/theme/theme_colors.dart';
 
 class CardButton extends StatelessWidget {
   const CardButton({
@@ -22,7 +23,9 @@ class CardButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(90),
       child: Container(
         decoration: BoxDecoration(
-          color: theme.primaryColor.withOpacity(.1),
+          color: cardModel.isSelected
+              ? ThemeColors.secondary
+              : theme.primaryColor.withOpacity(.1),
           borderRadius: BorderRadius.circular(90),
         ),
         padding: EdgeInsets.symmetric(
@@ -33,7 +36,7 @@ class CardButton extends StatelessWidget {
             'Elegir plan',
             style: textTheme.bodyText1!.copyWith(
               fontWeight: FontWeight.bold,
-              color: theme.primaryColor,
+              color: cardModel.isSelected ? Colors.white : theme.primaryColor,
             ),
           ),
         ),

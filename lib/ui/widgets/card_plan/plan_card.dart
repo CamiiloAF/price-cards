@@ -20,25 +20,33 @@ class PlanCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: cardModel.isSelected ? context.theme().primaryColor : null,
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: Colors.white70, width: 1),
-        borderRadius: BorderRadius.circular(30),
-      ),
+    return Container(
+      decoration: BoxDecoration(
+          color: cardModel.isSelected
+              ? context.theme().primaryColor
+              : context.theme().cardColor,
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            if (cardModel.isSelected)
+              BoxShadow(
+                color: Color(0xFF5243C2).withOpacity(.3),
+                offset: Offset(0, context.getResponsiveVerticalDimen(42)),
+                blurRadius: 34,
+              ),
+          ]),
       child: InkWell(
         onTap: () => onPressedCard(cardModel),
         borderRadius: BorderRadius.circular(30),
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: context.getResponsiveHorizontalDimen(29),
-            vertical: context.getResponsiveHorizontalDimen(16),
+            vertical: context.getResponsiveVerticalDimen(16),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (cardModel.isMostPopular) PlanMostPopularIndicator(),
+              if (cardModel.isMostPopular)
+                PlanMostPopularIndicator(cardModel: cardModel),
               PlanPrice(cardModel: cardModel),
               PlanDescription(cardModel: cardModel),
               ...cardModel.characteristics

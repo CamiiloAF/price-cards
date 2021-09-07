@@ -17,7 +17,7 @@ class PlanCharacteristic extends StatelessWidget {
     return Column(
       children: [
         Opacity(
-          opacity: characteristic.isActive ? 1 : .3,
+          opacity: characteristic.isActive ? 1 : .5,
           child: Row(
             children: [
               Container(
@@ -32,7 +32,10 @@ class PlanCharacteristic extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 8),
-              Text(characteristic.text),
+              Text(
+                characteristic.text,
+                style: context.textTheme().bodyText2,
+              ),
             ],
           ),
         ),

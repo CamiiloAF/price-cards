@@ -16,7 +16,6 @@ class PlanPrice extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.only(
-          top: context.getResponsiveHorizontalDimen(16),
           bottom: context.getResponsiveHorizontalDimen(16)),
       child: RichText(
         text: TextSpan(
