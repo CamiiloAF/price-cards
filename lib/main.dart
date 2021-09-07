@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:price_cards/shared/theme/theme.dart';
 import 'package:price_cards/ui/widgets/card.dart';
 import 'package:price_cards/ui/widgets/header.dart';
-import 'package:price_cards/shared/extensions/extensions.dart';
+
+import 'fake_data/fake_data.dart';
+import 'models/card_model.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -19,19 +22,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Header(
-                title: 'Planes y precios',
-                description:
-                    'Elige el plan que más te convenga y comienza a aprender hoy mismo.'),
-            PlanCard()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Header(
+                  title: 'Planes y precios',
+                  description:
+                      'Elige el plan que más te convenga y comienza a aprender hoy mismo.'),
+              ...planes.map((e) => PlanCard(
+                    cardModel: e,
+                    onPressedCard: (CardModel cardModel) {
+                      planes.forEach((element) => element.isSelected = false);
+                      cardModel.isSelected = true;
+
+                      setState(() {});
+                    },
+                  ))
+            ],
+          ),
         ),
       ),
     );
