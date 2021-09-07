@@ -8,13 +8,10 @@ final planes = [
     title: 'Intermedio',
     description: 'Comienza a aprender y ve contenido nuevo cada mes.',
     characteristics: [
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los proyectos'),
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los talleres'),
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los cursos'),
-      Characteristic(isActive: true, characteristic: 'Acceso a Discord'),
+      Characteristic(isActive: true, text: 'Acceso a todos los proyectos'),
+      Characteristic(isActive: true, text: 'Acceso a todos los talleres'),
+      Characteristic(isActive: true, text: 'Acceso a todos los cursos'),
+      Characteristic(isActive: true, text: 'Acceso a Discord'),
     ],
     isSelected: true,
   ),
@@ -24,13 +21,10 @@ final planes = [
     title: 'Básico',
     description: 'Comienza a aprender y ve contenido nuevo cada mes.',
     characteristics: [
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los proyectos'),
-      Characteristic(
-          isActive: false, characteristic: 'Acceso a todos los talleres'),
-      Characteristic(
-          isActive: false, characteristic: 'Acceso a todos los cursos'),
-      Characteristic(isActive: false, characteristic: 'Acceso a Discord'),
+      Characteristic(isActive: true, text: 'Acceso a todos los proyectos'),
+      Characteristic(isActive: false, text: 'Acceso a todos los talleres'),
+      Characteristic(isActive: false, text: 'Acceso a todos los cursos'),
+      Characteristic(isActive: false, text: 'Acceso a Discord'),
     ],
     isSelected: false,
   ),
@@ -40,13 +34,10 @@ final planes = [
     title: 'Intermedio',
     description: 'Comienza a aprender y ve contenido nuevo cada mes.',
     characteristics: [
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los proyectos'),
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los talleres'),
-      Characteristic(
-          isActive: false, characteristic: 'Acceso a todos los cursos'),
-      Characteristic(isActive: false, characteristic: 'Acceso a Discord'),
+      Characteristic(isActive: true, text: 'Acceso a todos los proyectos'),
+      Characteristic(isActive: true, text: 'Acceso a todos los talleres'),
+      Characteristic(isActive: false, text: 'Acceso a todos los cursos'),
+      Characteristic(isActive: false, text: 'Acceso a Discord'),
     ],
     isSelected: false,
   ),
@@ -56,14 +47,10 @@ final planes = [
     title: 'Profesional+',
     description: 'Comienza a aprender y ve contenido nuevo cada mes.',
     characteristics: [
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los proyectos'),
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los talleres'),
-      Characteristic(
-          isActive: true, characteristic: 'Acceso a todos los cursos'),
-      Characteristic(
-          isActive: true, characteristic: 'Mentorias personalizadas'),
+      Characteristic(isActive: true, text: 'Acceso a todos los proyectos'),
+      Characteristic(isActive: true, text: 'Acceso a todos los talleres'),
+      Characteristic(isActive: true, text: 'Acceso a todos los cursos'),
+      Characteristic(isActive: true, text: 'Mentorias personalizadas'),
     ],
     isSelected: false,
   )

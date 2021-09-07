@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:price_cards/shared/theme/theme.dart';
-import 'package:price_cards/ui/widgets/card.dart';
+import 'package:price_cards/ui/widgets/card_plan/plan_item.dart';
 import 'package:price_cards/ui/widgets/header.dart';
 
 import 'fake_data/fake_data.dart';
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: 'Planes y precios',
                   description:
                       'Elige el plan que más te convenga y comienza a aprender hoy mismo.'),
-              ...planes.map((e) => PlanCard(
+              ...planes.map((e) => PlanItem(
                     cardModel: e,
                     onPressedCard: (CardModel cardModel) {
                       planes.forEach((element) => element.isSelected = false);

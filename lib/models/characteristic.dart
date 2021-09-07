@@ -1,6 +1,6 @@
 class Characteristic {
   final bool isActive;
-  final String characteristic;
+  final String text;
 
-  Characteristic({required this.isActive, required this.characteristic});
+  Characteristic({required this.isActive, required this.text});
 }
