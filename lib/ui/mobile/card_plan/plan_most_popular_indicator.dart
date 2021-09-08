@@ -22,17 +22,22 @@ class PlanMostPopularIndicator extends StatelessWidget {
             horizontal: context.getResponsiveHorizontalDimen(20),
             vertical: context.getResponsiveVerticalDimen(6),
           ),
-          decoration: BoxDecoration(
-              color: cardModel.isSelected
-                  ? ThemeColors.primaryVariant
-                  : theme.primaryColor,
-              borderRadius: BorderRadius.circular(100)),
-          child: Text('MÁS POPULAR',
-              style: context.textTheme().caption!.copyWith(
-                  fontWeight: FontWeight.w600,
+          decoration: !cardModel.isMostPopular
+              ? null
+              : BoxDecoration(
                   color: cardModel.isSelected
-                      ? ThemeColors.secondary
-                      : Colors.white)),
+                      ? ThemeColors.primaryVariant
+                      : theme.primaryColor,
+                  borderRadius: BorderRadius.circular(100)),
+          child: Opacity(
+            opacity: !cardModel.isMostPopular ? 0 : 1,
+            child: Text('MÁS POPULAR',
+                style: context.textTheme().caption!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: cardModel.isSelected
+                        ? ThemeColors.secondary
+                        : Colors.white)),
+          ),
         ),
       ],
     );

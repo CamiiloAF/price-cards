@@ -22,6 +22,7 @@ class CardButton extends StatelessWidget {
       onTap: () => onPressedCard(cardModel),
       borderRadius: BorderRadius.circular(90),
       child: Container(
+        height: context.getResponsiveVerticalDimen(49),
         decoration: BoxDecoration(
           color: cardModel.isSelected
               ? ThemeColors.secondary
